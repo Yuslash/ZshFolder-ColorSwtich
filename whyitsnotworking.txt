@@ -1,0 +1,1 @@
+The source command updates the current shell environment, but when run from a Python subprocess, it won't persist in your current terminal session. This is because the Python process creates a child shell, and any changes made there don't affect the parent shell.
