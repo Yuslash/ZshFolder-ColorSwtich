@@ -17,6 +17,17 @@ echo -e "
 
 read color
 
+#declare an asscoiate array
+declare -A color_map
+
+color_map=(
+  ["green"]="32"
+  ["red"]="31"
+  ["yellow"]="33"
+  ["cyan"]="36"
+  ["blue"]="34"
+)
+
 # putting a state to check the condition whether the color is vaild from the input
 match_found=false
 
