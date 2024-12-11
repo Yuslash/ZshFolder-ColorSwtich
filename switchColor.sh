@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo "Enter Your Name:"
-read name
+echo "select the folder color change:"
+read color
 
-echo "Hello $name"
+if [ "$color" = "green" ]; then
+  echo "97"
+else
+  echo "That is not Color Mate"
+fi
