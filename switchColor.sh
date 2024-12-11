@@ -6,7 +6,7 @@ echo "select the folder color change, select the valid color:"
 valid_color=("green" "blue" "red" "yellow" "cyan")
 
 echo -e "
-  AvailableColors
+  \e[33mAvailable Colors\e[0m
 
   \e[32m1. green\e[0m
   \e[34m2. blue\e[0m
@@ -15,7 +15,8 @@ echo -e "
   \e[36m5. cyan\e[0m
 "
 
-read color
+read -p $'\e[45mEnter a Color:\e[0m ' color
+#read -p $"\e[45mEnter a Color: \e[0m" color
 
 #declare an asscoiate array
 declare -A color_map
@@ -28,20 +29,27 @@ color_map=(
   ["blue"]="34"
 )
 
-# putting a state to check the condition whether the color is vaild from the input
-match_found=false
-
-#create a loop to iterate through the valid color array to do that use for loop
-for valid_color in "${valid_color[@]}"; do
-  if [ "$color" = "$valid_color" ]; then
-    match_found=true
-    break
-  fi
-done
-
-#check the valid color and print the result
-if [ "$match_found" = true ]; then
-  echo "you have valid color, $color"
+#lets put an simple condition now
+if [ -n "${color_map[$color]}" ]; then
+  echo "${color_map[$color]}"
 else
-  echo "you have not entered the valid color"
+  echo "invalid Color Input"
 fi
+
+# # putting a state to check the condition whether the color is vaild from the input
+# match_found=false
+#
+# #create a loop to iterate through the valid color array to do that use for loop
+# for valid_color in "${valid_color[@]}"; do
+#   if [ "$color" = "$valid_color" ]; then
+#     match_found=true
+#     break
+#   fi
+# done
+#
+# #check the valid color and print the result
+# if [ "$match_found" = true ]; then
+#   echo "you have valid color, $color"
+# else
+#   echo "you have not entered the valid color"
+# fi
