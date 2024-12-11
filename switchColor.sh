@@ -3,16 +3,20 @@
 echo "select the folder color change, select the valid color:"
 
 # color Array
-valid_color=("green" "blue" "red" "yellow" "cyan")
 
 echo -e "
   \e[33mAvailable Colors\e[0m
 
-  \e[32m1. green\e[0m
-  \e[34m2. blue\e[0m
-  \e[31m3. red\e[0m
-  \e[33m4. yellow\e[0m
-  \e[36m5. cyan\e[0m
+  \e[91m1. red\e[0m
+  \e[92m2. green\e[0m
+  \e[93m3. yellow\e[0m
+  \e[94m4. blue\e[0m
+  \e[95m5. pink\e[0m
+  \e[96m6. cyan\e[0m
+  \e[97m7. gray\e[0m
+  \e[31m8. brightred\e[0m
+  \e[32m9. brightgreen\e[0m
+ \e[33m10. brightyellow\e[0m
 "
 
 read -p $'\e[45mEnter a Color:\e[0m ' color
@@ -21,11 +25,16 @@ read -p $'\e[45mEnter a Color:\e[0m ' color
 declare -A color_map
 
 color_map=(
-  ["green"]="32"
-  ["red"]="31"
-  ["yellow"]="33"
-  ["cyan"]="36"
-  ["blue"]="34"
+  ["red"]="91"
+  ["green"]="92"
+  ["yellow"]="93"
+  ["blue"]="94"
+  ["pink"]="95"
+  ["cyan"]="96"
+  ["gray"]="97"
+  ["brightred"]="31"
+  ["brightgreen"]="32"
+  ["brightyellow"]="33"
 )
 
 #lets put an simple condition now
