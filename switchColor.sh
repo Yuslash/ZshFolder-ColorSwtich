@@ -4,17 +4,17 @@ echo "select the folder color change, select the valid color:"
 read color
 
 # color Array
-valid_color = ("green""blue""red""yellow""cyan")
+valid_color=("green" "blue" "red" "yellow" "cyan")
 
 echo "${valid_color[@]}"
 
 # putting a state to check the condition whether the color is vaild from the input
-match_found = false
+match_found=false
 
 #create a loop to iterate through the valid color array to do that use for loop
 for valid_color in "${valid_color[@]}"; do
   if [ "$color" = "$valid_color" ]; then
-    match_found = true
+    match_found=true
     break
   fi
 done
@@ -25,4 +25,3 @@ if [ "$match_found" = true ]; then
 else
   echo "you have not entered the valid color"
 fi
-
