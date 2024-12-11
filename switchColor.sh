@@ -46,3 +46,10 @@ fi
 
 #call getColorValue.sh
 ./getColorValue.sh
+
+# having issue in this executing part because to change the color there is a code down below
+# export LS_COLORS="di=${RANDOM_COLOR}:fi=${RANDOM_COLOR}"
+# Before we get into those issue we need to solve the two things
+# -- first how we are gonna set argument on the .zshrc file and get the value from this file
+# -- second is after give the input color then the .zshrc file should reload so this code should do source ~/.zshrc
+# But the issue is we cannot do that maybe system protocol but you can perform the export argument function on shell
