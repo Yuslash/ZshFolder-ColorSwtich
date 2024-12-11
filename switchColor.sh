@@ -1,12 +1,21 @@
 #!/bin/bash
 
 echo "select the folder color change, select the valid color:"
-read color
 
 # color Array
 valid_color=("green" "blue" "red" "yellow" "cyan")
 
-echo "${valid_color[@]}"
+echo -e "
+  AvailableColors
+
+  \e[32m1. green\e[0m
+  \e[34m2. blue\e[0m
+  \e[31m3. red\e[0m
+  \e[33m4. yellow\e[0m
+  \e[36m5. cyan\e[0m
+"
+
+read color
 
 # putting a state to check the condition whether the color is vaild from the input
 match_found=false
